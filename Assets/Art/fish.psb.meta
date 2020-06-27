@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 229bce0ebac23403d993edf75df6f3a4
+guid: 5233a0d1f0a4b8849995326c4e4eb6b8
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -2752,27 +2752,27 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
   boneGOs:
-  - go: {fileID: 6597144876433123008, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: 6597144876433123008, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 0
-  - go: {fileID: 3100088577145075025, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: 3100088577145075025, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 1
-  - go: {fileID: -4097927723086176814, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: -4097927723086176814, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 2
-  - go: {fileID: -4851422934358353566, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: -4851422934358353566, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 3
-  - go: {fileID: 6209493219392552816, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: 6209493219392552816, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 4
-  - go: {fileID: -3160093872686651409, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: -3160093872686651409, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 5
-  - go: {fileID: -8699574049525019642, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: -8699574049525019642, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 6
-  - go: {fileID: 7038389254376578790, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: 7038389254376578790, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 7
-  - go: {fileID: 6460331062664132747, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: 6460331062664132747, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 8
-  - go: {fileID: 2006395916365771040, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: 2006395916365771040, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 9
-  - go: {fileID: 7718304207613247615, guid: 229bce0ebac23403d993edf75df6f3a4, type: 3}
+  - go: {fileID: 7718304207613247615, guid: 5233a0d1f0a4b8849995326c4e4eb6b8, type: 3}
     index: 10
   generateGOHierarchy: 0
   textureAssetName: fish Texture
