@@ -5,7 +5,9 @@ using UnityEngine;
 public class ZoneCreator : MonoBehaviour
 {   // Will create zones by seraching for game objects with tags, the tags determine what zone the object goes into. The game object gives its vector2 transform.position and stores it in its respective zone
     #region Public Vars
-
+    public static int zoneOneMaxPoints;
+    public static int zoneTwoMaxPoints;
+    public static int zoneThreeMaxPoints;
     #endregion
 
     #region Private Vars
@@ -41,13 +43,12 @@ public class ZoneCreator : MonoBehaviour
             zoneThreeMovePoints.Add(objectsInZone[i].transform.position);
         }
         zones.Add(zoneThreeMovePoints);
+
+        zoneOneMaxPoints = zoneOneMovePoints.Count;
+        zoneTwoMaxPoints = zoneTwoMovePoints.Count;
+        zoneThreeMaxPoints = zoneThreeMovePoints.Count;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     // Function for the PlayerController script to access the zone list, returns the nested list zones
     public static List<List<Vector2>> GetZoneList()
