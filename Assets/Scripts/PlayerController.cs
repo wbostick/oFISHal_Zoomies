@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public static int zoneThreeNumerator = 0; // Numerator for numerating across the points in zone 3
     public static int zoneNumPublic;
     public UnityEvent SeenEvent; // Event when owner sees player
-
+    public UnityEvent KickEvent;
     #endregion
 
     #region Private Vars
@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
     private List<List<Vector2>> zoneList = new List<List<Vector2>>(); // List of all the zones, used for getting the target points in a zone
     private static bool targetChange = false;
     #endregion
+
+    private void Awake()
+    {
+        KickEvent.AddListener(OnKick);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -132,8 +137,19 @@ public class PlayerController : MonoBehaviour
     // Lerps the fish to targetPosition
     private void MoveToPoint(Vector2 targetPosition)
     {
-        transform.position = Vector2.Lerp(transform.position, targetPosition, timeScale);
-        timeScale += Time.deltaTime / moveSpeedDivider;
+        if (!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("fish kick"))
+        { 
+            if (targetPosition.x < transform.position.x)
+            {
+                transform.localScale = new Vector3(-1,1,1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(1,1,1);
+            }
+            transform.position = Vector2.Lerp(transform.position, targetPosition, timeScale);
+            timeScale += Time.deltaTime / moveSpeedDivider;
+        }
     }
 
     public static void ChangeTargetPoint()
@@ -148,5 +164,10 @@ public class PlayerController : MonoBehaviour
         {
             SeenEvent.Invoke();
         }
+    }
+
+    public void OnKick()
+    {
+        GetComponent<Animator>()?.SetTrigger("kick");
     }
 }

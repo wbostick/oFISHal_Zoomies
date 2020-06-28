@@ -10,7 +10,7 @@ public class DestroyableObject : MonoBehaviour
     #endregion
 
     #region Public Vars
-
+    public float destroyVelocity = 100.0f;
     #endregion
 
     void LateUpdate()
@@ -27,6 +27,12 @@ public class DestroyableObject : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             EnumerateZonePoint();
+            if (!isDestroyed)
+            {
+                collision.gameObject?.GetComponent<PlayerController>().KickEvent.Invoke();
+                Vector3 diff = (transform.position - collision.gameObject.transform.position).normalized;
+                GetComponent<Rigidbody2D>().velocity = (destroyVelocity * diff);
+            }
             isDestroyed = true;
         }
     }

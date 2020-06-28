@@ -223,6 +223,13 @@ MonoBehaviour:
   tankPosition: {x: 0, y: 0}
   returnSpeedDivider: 2
   moveSpeedDivider: 6
+  safeDistance: 1
+  SeenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  KickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &751417268649359842
 GameObject:
   m_ObjectHideFlags: 0
