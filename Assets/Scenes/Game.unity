@@ -692,6 +692,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 69319371688193894, guid: d55b1e5955b46dc459dd3edbcfa74e45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833038896507166105, guid: d55b1e5955b46dc459dd3edbcfa74e45,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833038896507166105, guid: d55b1e5955b46dc459dd3edbcfa74e45,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4445824994628917351, guid: d55b1e5955b46dc459dd3edbcfa74e45,
         type: 3}
       propertyPath: m_Name
@@ -760,6 +775,11 @@ PrefabInstance:
     - target: {fileID: 6842259789321679365, guid: d55b1e5955b46dc459dd3edbcfa74e45,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111306760182580202, guid: d55b1e5955b46dc459dd3edbcfa74e45,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
