@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9071530777531069349}
   - component: {fileID: 6399741022112302273}
+  - component: {fileID: 924282761059859458}
   - component: {fileID: 9082201692960043654}
   - component: {fileID: 4700554548295872612}
+  - component: {fileID: 5406009535195769753}
   m_Layer: 0
   m_Name: Gurl
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558615793788385257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4158456, y: 2.4556587, z: -13.4300375}
+  m_LocalPosition: {x: -2.36, y: 2.4556587, z: -13.4300375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +84,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &924282761059859458
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558615793788385257}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.1138115, y: -2.9709752}
+      - {x: 2.479807, y: 2.910381}
+      - {x: -0.32696438, y: 4.537159}
+      - {x: -2.8916676, y: 2.6832683}
+      - {x: -2.3050625, y: -2.9983847}
+      - {x: -3.7748392, y: -3.6740038}
+      - {x: -4.89777, y: -5.4162426}
+      - {x: 5.3705387, y: -5.380766}
+      - {x: 4.547664, y: -3.8820724}
 --- !u!95 &9082201692960043654
 Animator:
   serializedVersion: 3
@@ -115,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceChangeTime: 3
   turnActivated: 0
+  ownerIsLooking: 0
   animator: {fileID: 0}
   turnTimes:
   - 3
@@ -124,3 +161,16 @@ MonoBehaviour:
   - 2
   - 2
   - 2
+--- !u!114 &5406009535195769753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558615793788385257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f799c3f2ee7b4aa2984888f7a6e3a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opacity: 0.5

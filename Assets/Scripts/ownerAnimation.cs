@@ -16,7 +16,7 @@ public class ownerAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Animator animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         StartCoroutine(faceRandomizer());
     }
 
