@@ -5,29 +5,18 @@ using UnityEngine;
 public class DestroyableObject : MonoBehaviour
 {
     #region Private Vars
-    private bool isDestroyed = false;
-    private bool targetChanged = false;
+
     #endregion
 
     #region Public Vars
 
     #endregion
 
-    void LateUpdate()
-    {
-        if (isDestroyed && !targetChanged)
-        {
-            PlayerController.ChangeTargetPoint();
-            targetChanged = true;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && PlayerController.isMoving)
         {
             EnumerateZonePoint();
-            isDestroyed = true;
         }
     }
 
