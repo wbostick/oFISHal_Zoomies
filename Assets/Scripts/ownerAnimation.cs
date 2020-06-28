@@ -6,6 +6,7 @@ public class ownerAnimation : MonoBehaviour
 {
     public float faceChangeTime;
     public bool turnActivated = false;
+    public bool ownerIsLooking = false;
     public Animator animator;
 
 
@@ -53,11 +54,16 @@ public class ownerAnimation : MonoBehaviour
         if (phase == turnTimes.Length)
         {
             turnActivated = false;
+            ownerIsLooking = false;
             changeFace();
             StartCoroutine(faceRandomizer());
         }
         else
         {
+            if (phase == 2)
+            {
+                ownerIsLooking = true;
+            }
             animator.SetInteger("turnPhase", phase + 1);
             StartCoroutine(turnPhaseChange(phase + 1));
         }
