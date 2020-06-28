@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,10 +10,13 @@ public class PlayerController : MonoBehaviour
     public Vector2 tankPosition;
     public int returnSpeedDivider = 2; // Divider to determine speed of fish returning to safe zone
     public int moveSpeedDivider = 6; // Divider to determine speed of fish moving to its point
+    public float safeDistance = 1.0f; // Max Distance from tank you are safe within when owner turns
     public static int zoneOneNumerator = 0; // Numerator for numerating across the points in zone 1
     public static int zoneTwoNumerator = 0; // Numerator for numerating across the points in zone 2
     public static int zoneThreeNumerator = 0; // Numerator for numerating across the points in zone 3
     public static int zoneNumPublic;
+    public UnityEvent SeenEvent; // Event when owner sees player
+
     #endregion
 
     #region Private Vars
@@ -134,5 +139,14 @@ public class PlayerController : MonoBehaviour
     public static void ChangeTargetPoint()
     {
         targetChange = true;
+    }
+
+    public void CheckSeenByOwner()
+    {
+        float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), tankPosition);
+        if (distance > safeDistance)
+        {
+            SeenEvent.Invoke();
+        }
     }
 }

@@ -8,7 +8,7 @@ public class ownerAnimation : MonoBehaviour
     public bool turnActivated = false;
     public bool ownerIsLooking = false;
     public Animator animator;
-
+    public PlayerController player;
 
     public float[] turnTimes;
  
@@ -16,6 +16,7 @@ public class ownerAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
         animator = GetComponent<Animator>();
         StartCoroutine(faceRandomizer());
     }
@@ -23,7 +24,10 @@ public class ownerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (ownerIsLooking)
+        {
+            player?.CheckSeenByOwner();
+        }
     }
 
     void changeFace()
