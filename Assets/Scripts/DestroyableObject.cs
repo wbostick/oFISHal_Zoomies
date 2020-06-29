@@ -5,29 +5,21 @@ using UnityEngine;
 public class DestroyableObject : MonoBehaviour
 {
     #region Private Vars
-    private bool isDestroyed = false;
-    private bool targetChanged = false;
+
     #endregion
 
     #region Public Vars
-
+    public float destroyVelocity = 100.0f;
     #endregion
-
-    void LateUpdate()
-    {
-        if (isDestroyed && !targetChanged)
-        {
-            PlayerController.ChangeTargetPoint();
-            targetChanged = true;
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && PlayerController.isMoving)
         {
             EnumerateZonePoint();
-            isDestroyed = true;
+
+            collision.gameObject?.GetComponent<PlayerController>().KickEvent.Invoke();
+            StartCoroutine(KickOfScreen());
         }
     }
 
@@ -45,5 +37,14 @@ public class DestroyableObject : MonoBehaviour
         {
             PlayerController.zoneThreeNumerator++;
         }
+    }
+
+    public IEnumerator KickOfScreen()
+    {
+        yield return new WaitForSeconds(.2f);
+        Vector3 dir = transform.position;
+        dir.z = 0;
+        dir.Normalize();
+        GetComponent<Rigidbody2D>().velocity = (destroyVelocity * dir);
     }
 }
