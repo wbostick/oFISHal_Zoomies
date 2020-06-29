@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2042324945696743154}
   - component: {fileID: 2042324945696743152}
   - component: {fileID: 2042324945696743153}
+  - component: {fileID: -573063549465403047}
   m_Layer: 0
   m_Name: Zone 3 Object
   m_TagString: Zone 3
@@ -121,3 +122,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDestroyed: 0
+  destroyVelocity: 100
+--- !u!50 &-573063549465403047
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042324945696743149}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
