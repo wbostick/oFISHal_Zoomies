@@ -20,9 +20,6 @@ public class DestroyableObject : MonoBehaviour
             isDestroyed = true;
             EnumerateZonePoint();
             PlayerController.TargetChange();
-
-            collision.gameObject?.GetComponent<PlayerController>().KickEvent.Invoke();
-            StartCoroutine(KickOfScreen());
         }
     }
 
