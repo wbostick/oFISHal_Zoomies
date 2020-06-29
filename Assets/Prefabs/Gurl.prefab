@@ -14,7 +14,11 @@ GameObject:
   - component: {fileID: 9082201692960043654}
   - component: {fileID: 4700554548295872612}
   - component: {fileID: 5406009535195769753}
+<<<<<<< HEAD
+  - component: {fileID: 6179132667678906635}
+=======
   - component: {fileID: 4152256617478468624}
+>>>>>>> parent of e77140b... Merge branch 'master' of https://github.com/wbostick/oFISHal_Zoomies
   m_Layer: 0
   m_Name: Gurl
   m_TagString: Untagged
@@ -150,20 +154,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d769edfae15e46e981d39bf7a2b6662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceChangeTime: 3
+  faceChangeTime: 1
   turnActivated: 0
   ownerIsLooking: 0
   animator: {fileID: 0}
   audioComp: {fileID: 0}
   player: {fileID: 0}
   turnTimes:
-  - 3
-  - 5
   - 1
-  - 2
-  - 2
-  - 2
-  - 2
+  - 1
+  - 0.5
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!114 &5406009535195769753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,14 +181,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opacity: 0.5
+<<<<<<< HEAD
+--- !u!114 &6179132667678906635
+MonoBehaviour:
+=======
 --- !u!82 &4152256617478468624
 AudioSource:
+>>>>>>> parent of e77140b... Merge branch 'master' of https://github.com/wbostick/oFISHal_Zoomies
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558615793788385257}
   m_Enabled: 1
+<<<<<<< HEAD
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1af002e64c4425787889fc10f4a502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  Min: 3
+  Max: 7
+  space: 5
+=======
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f883a5fcab2579d4eb257e1a421bd526, type: 3}
@@ -273,3 +292,4 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+>>>>>>> parent of e77140b... Merge branch 'master' of https://github.com/wbostick/oFISHal_Zoomies

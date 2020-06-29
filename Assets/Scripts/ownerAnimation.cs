@@ -8,6 +8,9 @@ public class ownerAnimation : MonoBehaviour
     public bool turnActivated = false;
     public bool ownerIsLooking = false;
     public Animator animator;
+    public AudioSource audioComp;
+
+    public PlayerController player;
 
 
     public float[] turnTimes;
@@ -16,14 +19,20 @@ public class ownerAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
+        
         animator = GetComponent<Animator>();
+        audioComp = GetComponent<AudioSource>();
         StartCoroutine(faceRandomizer());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (ownerIsLooking)
+        {
+            player?.CheckSeenByOwner();
+        }
     }
 
     void changeFace()
@@ -33,6 +42,7 @@ public class ownerAnimation : MonoBehaviour
 
     public void activateTurn()
     {
+        SetSpeaking(false);
         turnActivated = true;
         animator.SetInteger("whichOwner", 0);
         StartCoroutine(turnPhaseChange(1));
@@ -40,6 +50,7 @@ public class ownerAnimation : MonoBehaviour
 
     IEnumerator faceRandomizer()
     {
+        SetSpeaking(true);
         yield return new WaitForSeconds(faceChangeTime);
         if (turnActivated == false)
         {
@@ -68,5 +79,17 @@ public class ownerAnimation : MonoBehaviour
             StartCoroutine(turnPhaseChange(phase + 1));
         }
 
+    }
+
+    public void SetSpeaking(bool bShouldSpeak)
+    {
+        if (bShouldSpeak)
+        {
+            audioComp.UnPause();
+        }
+        else
+        {
+            audioComp.Pause();
+        }
     }
 }
