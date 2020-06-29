@@ -85,7 +85,7 @@ public class ownerAnimation : MonoBehaviour
     {
         if (bShouldSpeak)
         {
-            audioComp.Play();
+            audioComp.UnPause();
         }
         else
         {
