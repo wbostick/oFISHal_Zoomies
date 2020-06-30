@@ -9,6 +9,7 @@ public class DestroyableObject : MonoBehaviour
     #endregion
 
     #region Public Vars
+    public bool isDestroyed = false;
     public float destroyVelocity = 100.0f;
     #endregion
 
@@ -16,7 +17,9 @@ public class DestroyableObject : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && PlayerController.isMoving)
         {
+            isDestroyed = true;
             EnumerateZonePoint();
+            PlayerController.TargetChange();
 
             collision.gameObject?.GetComponent<PlayerController>().KickEvent.Invoke();
             StartCoroutine(KickOfScreen());
@@ -25,17 +28,44 @@ public class DestroyableObject : MonoBehaviour
 
     private void EnumerateZonePoint()
     {
-        if (PlayerController.zoneNumPublic == 0 && PlayerController.zoneOneNumerator < ZoneCreator.zoneOneMaxPoints - 1)
+        if (PlayerController.zoneNumPublic == 0)
         {
-            PlayerController.zoneOneNumerator++;
+            if (PlayerController.zoneOneNumerator < ZoneCreator.zoneOneMaxPoints - 1)
+            {
+                PlayerController.zoneOneNumerator++;
+            }
+            else if (PlayerController.zoneOneNumerator < ZoneCreator.zoneOneMaxPoints && isDestroyed)
+            {
+                PlayerController.CallNextZone();
+                PlayerController.isReturning = true;
+                PlayerController.isMoving = false;
+            }
         }
-        else if (PlayerController.zoneNumPublic == 1 && PlayerController.zoneTwoNumerator < ZoneCreator.zoneTwoMaxPoints - 1)
+        else if (PlayerController.zoneNumPublic == 1)
         {
-            PlayerController.zoneTwoNumerator++;
+            if (PlayerController.zoneTwoNumerator < ZoneCreator.zoneTwoMaxPoints - 1)
+            {
+                PlayerController.zoneTwoNumerator++;
+            }
+            else if (PlayerController.zoneTwoNumerator < ZoneCreator.zoneTwoMaxPoints && isDestroyed)
+            {
+                PlayerController.CallNextZone();
+                PlayerController.isReturning = true;
+                PlayerController.isMoving = false;
+            }
         }
-        else if (PlayerController.zoneNumPublic == 2 && PlayerController.zoneThreeNumerator < ZoneCreator.zoneThreeMaxPoints - 1)
+        else if (PlayerController.zoneNumPublic == 2)
         {
-            PlayerController.zoneThreeNumerator++;
+            if (PlayerController.zoneThreeNumerator < ZoneCreator.zoneThreeMaxPoints - 1)
+            {
+                PlayerController.zoneThreeNumerator++;
+            }
+            else if (PlayerController.zoneThreeNumerator < ZoneCreator.zoneThreeMaxPoints && isDestroyed)
+            {
+                PlayerController.CallNextZone();
+                PlayerController.isReturning = true;
+                PlayerController.isMoving = false;
+            }
         }
     }
 
